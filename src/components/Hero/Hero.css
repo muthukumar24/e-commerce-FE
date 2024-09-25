@@ -1,0 +1,17 @@
+#hero-area
+{
+    margin-top: 50px;
+    padding: 60px 0px;
+}
+
+#header-text-one
+{
+    font-size: 3rem !important;
+    font-weight: 700;
+}
+
+#header-text-two
+{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
