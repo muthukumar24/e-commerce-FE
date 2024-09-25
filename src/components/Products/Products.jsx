@@ -84,13 +84,12 @@ function Products() {
                   <img src={product.images[0]} className="card-img-top px-2 py-2" alt={product.name} />
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">{product.description}</p>
+                    {/* <p className="card-text">{product.description}</p> */}
                     <p className="card-text"><strong>Price: </strong>${product.price}</p>
-                    <p className="card-text"><strong>Quantity: </strong>{product.quantity}</p>
-                    <p className="card-text"><strong>Category: </strong>{product.category}</p>
+                    {/* <p className="card-text"><strong>Quantity: </strong>{product.quantity}</p> */}
+                    {/* <p className="card-text"><strong>Category: </strong>{product.category}</p> */}
                     <div className='d-flex justify-content-evenly'>
-                      <button className='btn btn-danger mt-2'>Add to Cart</button>
-                      <button className='btn order-now-btn mt-2'>Order Now</button>
+                      <button className='btn order-now-btn mt-2'>Know More</button>
                     </div>
                   </div>
                 </div>
@@ -112,6 +111,7 @@ function Products() {
                 </div>
                 <div className="modal-body">
                   <img src={selectedProduct.images[0]} className="img-fluid mb-3" alt={selectedProduct.name} />
+                  <h5>{selectedProduct.name}</h5>
                   <p><strong>Description: </strong>{selectedProduct.description}</p>
                   <p><strong>Price: </strong>${selectedProduct.price}</p>
                   <p><strong>Quantity: </strong>{selectedProduct.quantity}</p>
