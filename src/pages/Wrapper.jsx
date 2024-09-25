@@ -1,8 +1,8 @@
 import React from 'react'
-import NavBar from '../components/Navbar/NavBAr'
-import Products from '../components/Products/Products'
-import Footer from '../components/Footer/Footer'
-import Hero from '../components/Hero/HEro'
+import NavBar from '../components/Navbar/NavBar.jsx'
+import Products from '../components/Products/Products.jsx'
+import Footer from '../components/Footer/Footer.jsx'
+import Hero from '../components/Hero/Hero.jsx'
 
 function Wrapper() {
   return (

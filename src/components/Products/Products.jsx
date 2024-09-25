@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { ProductContext } from '../../context/ProductContext'; // Update path accordingly
+import { ProductContext } from '../../context/ProductContext.jsx'; // Update path accordingly
 import '../Products/Products.css';
 
 function Products() {
