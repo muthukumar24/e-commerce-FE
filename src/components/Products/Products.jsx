@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { ProductContext } from '../../context/ProductContext.jsx'; // Update path accordingly
+import { ProductContext } from '../../context/ProductContext.jsx'; 
+import { ClipLoader } from 'react-spinners';
 import '../Products/Products.css';
 
 function Products() {
@@ -88,7 +89,7 @@ function Products() {
                     <p className="card-text"><strong>Price: </strong>${product.price}</p>
                     {/* <p className="card-text"><strong>Quantity: </strong>{product.quantity}</p> */}
                     {/* <p className="card-text"><strong>Category: </strong>{product.category}</p> */}
-                    <div className='d-flex justify-content-evenly'>
+                    <div className='d-flex justify-content-center'>
                       <button className='btn order-now-btn mt-2'>Know More</button>
                     </div>
                   </div>
@@ -96,7 +97,7 @@ function Products() {
               </div>
             ))
           ) : (
-            <p className="text-center">No products available.</p>
+            <p className="text-center"><ClipLoader size={30} color={"#242c6c"} />Loading...</p>
           )}
         </div>
 
