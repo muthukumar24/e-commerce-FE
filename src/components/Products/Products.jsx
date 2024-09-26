@@ -1,14 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { ProductContext } from '../../context/ProductContext.jsx'; 
 import { ClipLoader } from 'react-spinners';
 import '../Products/Products.css';
 
 function Products() {
-  const { products } = useContext(ProductContext);
+  const { products, loading } = useContext(ProductContext);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [categoryText, setCategoryText] = useState('Category'); // State to store button text
+  const [categoryText, setCategoryText] = useState('Category');
+ 
 
   const handleProductClick = (product) => {
     setSelectedProduct(product);
@@ -78,7 +79,10 @@ function Products() {
 
       <div className="container product-container">
         <div className="row">
-          {filteredProducts.length > 0 ? (
+        { loading ? (
+            <p className="text-center mt-4"><ClipLoader size={40} color={"#242c6c"} /></p>
+          ) : (
+          filteredProducts.length > 0 ? (
             filteredProducts.map((product) => (
               <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4 py-2 mb-4" key={product._id}>
                 <div className="card h-100 mb-4 product-card" onClick={() => handleProductClick(product)} style={{ cursor: 'pointer' }}>
@@ -97,8 +101,9 @@ function Products() {
               </div>
             ))
           ) : (
-            <p className="text-center"><ClipLoader size={30} color={"#242c6c"} />Loading...</p>
-          )}
+            <p className="text-center">No Products Available</p>
+          )
+        )}
         </div>
 
         {/* Modal */}
